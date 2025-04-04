@@ -7,3 +7,11 @@ plugins {
     alias(libs.plugins.kmmbridge) apply false
     alias(libs.plugins.skie) apply false
 }
+
+subprojects {
+    val GROUP: String by project
+    val LIBRARY_VERSION: String by project
+
+    group = GROUP
+    version = LIBRARY_VERSION
+}

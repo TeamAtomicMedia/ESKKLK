@@ -1,5 +1,5 @@
 package uk.co.atomicmedia.eskklk.shared
 
-object MyClass {
-    const val test: String = "Hello!"
+class MyClass {
+    val test: String = "Hello!"
 }
