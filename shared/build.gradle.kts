@@ -28,6 +28,8 @@ kotlin {
     }
 }
 
+addGithubPackagesRepository()
+
 kmmbridge {
     gitHubReleaseArtifacts()
     spm(swiftToolVersion = "5.8") {
