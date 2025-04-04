@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "ESKKLK"
 include(":app")
- 
+include(":shared")
