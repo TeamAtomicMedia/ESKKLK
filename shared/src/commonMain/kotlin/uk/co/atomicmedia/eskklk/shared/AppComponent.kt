@@ -6,5 +6,5 @@ import software.amazon.lastmile.kotlin.inject.anvil.SingleIn
 
 
 interface AppComponent {
-
+    val appVersionPrinter: AppVersionPrinter
 }
