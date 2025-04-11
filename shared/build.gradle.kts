@@ -24,6 +24,7 @@ kotlin {
         compilerOptions {
             jvmTarget.set(JvmTarget.JVM_17)
         }
+        publishAllLibraryVariants()
     }
 
     targets.withType<KotlinNativeTarget>().configureEach {
