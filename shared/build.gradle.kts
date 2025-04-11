@@ -15,27 +15,25 @@ plugins {
 }
 
 kotlin {
-    androidTarget()
-    iosX64()
-    iosArm64()
-    iosSimulatorArm64()
-
-    targets.withType<KotlinAndroidTarget>().configureEach {
+    androidTarget {
         compilerOptions {
             jvmTarget.set(JvmTarget.JVM_17)
         }
         publishAllLibraryVariants()
     }
-
-    targets.withType<KotlinNativeTarget>().configureEach {
-        binaries.framework {
+    listOf(
+        iosX64(),
+        iosArm64(),
+        iosSimulatorArm64(),
+    ).forEach {
+        it.binaries.framework {
             isStatic = true
         }
     }
 
     applyDefaultHierarchyTemplate()
 
-    sourceSets{
+    sourceSets {
         commonMain.dependencies {
             implementation(libs.kotlin.inject.runtime)
         }
