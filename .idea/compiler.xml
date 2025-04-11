@@ -2,7 +2,6 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
-      <module name="ESKKLK.shared.main" target="11" />
       <module name="ESKKLK.shared.test" target="11" />
     </bytecodeTargetLevel>
   </component>
