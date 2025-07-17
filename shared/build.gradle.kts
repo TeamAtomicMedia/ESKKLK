@@ -56,6 +56,7 @@ dependencies {
 
     commonMainImplementation(libs.anvil.runtime)
     commonMainImplementation(libs.anvil.runtime.optional)
+    commonMainImplementation(libs.kotlinx.coroutines.core)
 }
 
 addGithubPackagesRepository()
