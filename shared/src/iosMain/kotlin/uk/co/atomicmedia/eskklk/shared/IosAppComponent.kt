@@ -7,11 +7,7 @@ import software.amazon.lastmile.kotlin.inject.anvil.SingleIn
 
 @MergeComponent(AppScope::class)
 @SingleIn(AppScope::class)
-abstract class IosAppComponent(
-    @get:Provides val appVersionProvider: AppVersionProvider,
-) : AppComponent
+abstract class IosAppComponent() : AppComponent
 
 @MergeComponent.CreateComponent
-expect fun create(
-    appVersionProvider: AppVersionProvider,
-): IosAppComponent
+expect fun create(): IosAppComponent
