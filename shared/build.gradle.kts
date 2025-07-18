@@ -34,8 +34,12 @@ kotlin {
     applyDefaultHierarchyTemplate()
 
     sourceSets {
-        commonMain.dependencies {
-            implementation(libs.kotlin.inject.runtime)
+        commonMain {
+            dependencies {
+                implementation(libs.kotlin.inject.runtime)
+                implementation(libs.kotlinx.datetime)
+                implementation(libs.kotlinx.coroutines.core)
+            }
         }
     }
 }
@@ -56,7 +60,7 @@ dependencies {
 
     commonMainImplementation(libs.anvil.runtime)
     commonMainImplementation(libs.anvil.runtime.optional)
-    commonMainImplementation(libs.kotlinx.coroutines.core)
+
 }
 
 addGithubPackagesRepository()
