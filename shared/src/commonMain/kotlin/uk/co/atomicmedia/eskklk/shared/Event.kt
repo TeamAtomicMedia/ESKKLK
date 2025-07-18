@@ -13,6 +13,7 @@ data class Event(
     val date: Instant,
     val imageUrl: String,
     val bannerImageUrl: String,
+    val interests: List<Interest>
 )
 
 enum class Source {
