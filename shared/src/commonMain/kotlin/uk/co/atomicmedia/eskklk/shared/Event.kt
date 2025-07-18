@@ -11,8 +11,8 @@ data class Event(
     val title: String,
     val url: String,
     val date: Instant,
-    val imageUrl: String,
-    val bannerImageUrl: String,
+    val imageUrl: String?,
+    val bannerImageUrl: String?,
     val interests: List<Interest>
 )
 

@@ -1,0 +1,41 @@
+query EventSearch {
+    eventSearch(
+        filter: {
+            lat: 52.954784
+            lon: -1.158109
+            query:"."
+        }
+    ) {
+        edges {
+            node {
+                id
+                title
+                description
+                eventUrl
+                dateTime
+                featuredEventPhoto {
+                    highResUrl
+                    thumbUrl
+                }
+                topics {
+                    edges {
+                        node {
+                            id
+                            name
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+#val id: String,
+#    val source: Source,
+#    val title: String,
+#    val url: String,
+#    val date: Instant,
+#    val imageUrl: String,
+#    val bannerImageUrl: String,
+#    val interests: List<Interest>

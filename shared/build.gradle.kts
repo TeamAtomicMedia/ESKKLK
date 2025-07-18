@@ -12,6 +12,7 @@ plugins {
     alias(libs.plugins.skie)
     alias(libs.plugins.ksp)
     `maven-publish`
+    id("com.apollographql.apollo") version "4.3.1"
 }
 
 kotlin {
@@ -39,8 +40,12 @@ kotlin {
                 implementation(libs.kotlin.inject.runtime)
                 implementation(libs.kotlinx.datetime)
                 implementation(libs.kotlinx.coroutines.core)
+                implementation("com.apollographql.apollo:apollo-runtime:4.3.1")
             }
         }
+    }
+    compilerOptions {
+        optIn.add("kotlin.time.ExperimentalTime")
     }
 }
 
@@ -97,5 +102,16 @@ android {
                 "proguard-rules.pro"
             )
         }
+    }
+}
+
+apollo {
+    service("service") {
+        packageName.set("uk.co.atomicmedia.eskklk")
+        introspection {
+            endpointUrl.set("https://api.meetup.com/gql-ext")
+            schemaFile.set(file("src/commonMain/graphql/schema.graphqls"))
+        }
+        mapScalar("DateTime", "kotlin.time.Instant", "uk.co.atomicmedia.eskklk.shared.DateTimeAdapter")
     }
 }
