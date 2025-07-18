@@ -28,8 +28,7 @@ class PeblRepository() {
         return result.data
             ?.eventSearch
             ?.toModel(
-                interests.shuffled().filter { Random.nextBoolean() }.take(Random.nextInt(1, 4))
-                    .sortedBy { it.name }
+                interests
             )
             ?: emptyList()
     }
@@ -159,7 +158,8 @@ private fun EventSearchQuery.EventSearch.toModel(
                 date = it.dateTime?: Clock.System.now(),
                 imageUrl = it.featuredEventPhoto?.highResUrl,
                 bannerImageUrl = it.featuredEventPhoto?.thumbUrl,
-                interests = interests
+                interests = interests.shuffled().filter { Random.nextBoolean() }.take(Random.nextInt(1, 4))
+                    .sortedBy { it.name }
             )
         }
     }
