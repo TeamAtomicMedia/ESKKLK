@@ -100,6 +100,7 @@ private fun EventSearchQuery.EventSearch.toModel(
                 id = it.id,
                 source = Source.entries.random(),
                 title = it.title,
+                desc = it.description,
                 url = it.eventUrl,
                 date = it.dateTime?: Clock.System.now(),
                 imageUrl = it.featuredEventPhoto?.highResUrl,

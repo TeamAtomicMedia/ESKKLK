@@ -9,6 +9,7 @@ data class Event(
     val id: String,
     val source: Source,
     val title: String,
+    val desc: String,
     val url: String,
     val date: Instant,
     val imageUrl: String?,
